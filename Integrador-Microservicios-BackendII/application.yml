@@ -1,0 +1,16 @@
+spring:
+  zipkin:
+    enabled: true
+    baseUrl: http://${zipkin:localhost}:9411
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+  endpoint:
+    info:
+      enabled: true

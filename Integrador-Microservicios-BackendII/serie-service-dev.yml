@@ -1,0 +1,30 @@
+server:
+  port: 8086
+
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      username: root #${rootuser:root}
+      password: password #${rootpass:password}
+      database: series
+      port: 27017
+      host: localhost #${mongodb:localhost}
+  #datasource:
+  #  driver-class-name: org.h2.Driver
+  #  url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1;
+  #  username: sa
+  #  password: sa
+  #sql:
+  #  init:
+  #    data-locations: classpath:serie.sql
+  #jpa:
+  #  defer-datasource-initialization: true
+  #  hibernate:
+  #    ddl-auto: create-drop
+
+info:
+  app:
+    name: ${spring.application.name}
+    version: 1.0.0
+    description: Serie Microservice

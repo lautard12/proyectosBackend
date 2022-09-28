@@ -1,0 +1,22 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-service
+  zipkin:
+    enabled: true
+    baseUrl: http://zipkin:9411
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/AlPetrovich/Microservices-CTD
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-service:8761/eureka #contenedor de eureka
+  instance:
+    lease-renewal-interval-in-seconds: 10
+

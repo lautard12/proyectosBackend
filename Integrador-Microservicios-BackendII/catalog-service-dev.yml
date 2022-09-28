@@ -1,0 +1,48 @@
+server:
+  port: 8084
+
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      username: rootuser
+      password: rootpass
+      database: catalog
+      port: 27017
+      host: ${mongodb:localhost}
+  #datasource:
+  #  driver-class-name: org.h2.Driver
+  #  url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1;
+  #  username: sa
+  #  password: sa
+  #sql:
+  #  init:
+  #    data-locations: classpath:catalog.sql
+  #jpa:
+  #  defer-datasource-initialization: true
+  #  hibernate:
+  #    ddl-auto: create-drop
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      movies:
+        slidingWindowType: COUNT_BASED #analisis desde cant de eventos
+        slidingWindowSize: 5 #cuantos eventos desamos esperar
+        failureRateThreshold: 50 #limite de fallas que quiero permitir, 50%
+        automaticTransitionFromOpenToHalfOpenEnabled: true #transaccion automatica de semiabierto a abierto
+        waitDurationInOpenState: 15000 #cuanto tiempo queremos esperar si se activa
+        permittedNumberOfCallsInHalfOpenState: 3 #cuantos intentos de peticiones intentamos en estado semiabierto
+        registerHealthIndicator: true
+        allowHealthIndicatorToFail: false
+
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+
+info:
+  app:
+    name: ${spring.application.name}
+    version: 1.0.0
+    description: Catalog Microservice
