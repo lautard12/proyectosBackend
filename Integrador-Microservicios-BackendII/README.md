@@ -1,5 +1,17 @@
 # ProyectoIntegradorBackend
 
+# Tecnologias utilizadas
+
+-Docker
+-RabbitMQ
+-Gateway
+-Eureka
+-Config server
+-Zipkin
+-MongoDB
+-MySQL
+-Spring Boot
+
 # Microservicios: Película, Serie y Catálogo
 
 Este proyecto implementa una arquitectura de microservicios diseñada para la gestión de contenido de entretenimiento. Está compuesto por tres microservicios: **Película**, **Serie** y **Catálogo**.
