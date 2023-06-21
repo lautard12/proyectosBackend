@@ -1,16 +1,17 @@
 # ProyectoIntegradorBackend
 
-# Tecnologias utilizadas
+# Tecnologías utilizadas
 
--Docker
--RabbitMQ
--Gateway
--Eureka
--Config server
--Zipkin
--MongoDB
--MySQL
--Spring Boot
+La lista de tecnologías utilizadas en el proyecto es la siguiente:
+
+- **Docker**
+- **RabbitMQ**
+- **Gateway**
+- **Eureka**
+- **Config Server**
+- **MongoDB**
+- **MySQL**
+- **Spring Boot**
 
 # Microservicios: Película, Serie y Catálogo
 
